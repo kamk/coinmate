@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/bitcoinDepositAddresses?clientId=2629&nonce=145674196386&signature=F4637C88581C49F175B77BA98ED268F99926F544990C39FEBF0CE4E5CD63597A
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 10:32:44 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de90d2de0feaf8e9cd39268bb370ae8311456741963; expires=Tue, 28-Feb-17
+        10:32:43 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c3b4fa65150577-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":["1HdTtLCFyCGaUbYLAiuPwU3kMYLdvX6tYH","15v16WuR5QgM6wTX5oMBmy78LgNPLoGXm6"]}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 10:32:44 GMT
+recorded_with: VCR 3.0.1

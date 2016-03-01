@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/unconfirmedBitcoinDeposits?clientId=2629&nonce=145674281659&signature=68DA0DB031A90113CD163EDEC372B3910BB16F741BBFAE2540872F250E182685
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 10:46:57 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d183685ff86378f9cee9da92e93720a081456742817; expires=Tue, 28-Feb-17
+        10:46:57 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c3c9ce990c0aa8-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":[{"id":121787,"amount":0.137,"address":null,"numberOfConfirmations":0}]}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 10:46:57 GMT
+recorded_with: VCR 3.0.1

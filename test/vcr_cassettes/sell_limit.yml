@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/sellLimit?amount=0.025&clientId=2629&currencyPair=BTC_EUR&nonce=145673824951&price=394&signature=2FFAFD39E707D7FC1CA249E8D5892D65E080583BD7EFA3F2B2065948A62D37A3
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 09:30:51 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2442e6d88238df1da51c1244ba14e7291456738250; expires=Tue, 28-Feb-17
+        09:30:50 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c35a4e96bb057d-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":3611652}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 09:30:51 GMT
+recorded_with: VCR 3.0.1

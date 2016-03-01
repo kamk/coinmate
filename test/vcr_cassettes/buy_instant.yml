@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/buyInstant?clientId=2629&currencyPair=BTC_EUR&nonce=145674099164&signature=553A7C67AD9CD6DFA658DE652443AB67CF2E4D8D11D3D1D80696149176A40253&total=24.52
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 10:16:33 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df2bc531c1b8c0bfaed73f73f471934ad1456740992; expires=Tue, 28-Feb-17
+        10:16:32 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c39d44de770577-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":3612415}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 10:16:33 GMT
+recorded_with: VCR 3.0.1

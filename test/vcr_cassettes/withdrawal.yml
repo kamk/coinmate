@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/bitcoinWithdrawal?address=1B5mzWnLh3NAZg3xfRdU5gMQxTdFYUYYqL&amount=0.13668431&clientId=2629&nonce=145674163619&signature=A76E73DDDB640033C367C9CAB816099E66104528003BB639A2AB1D43AC2C13C7
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 10:27:16 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd77be9ee874736a32f3ddf475e2253821456741636; expires=Tue, 28-Feb-17
+        10:27:16 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c3acfd30c70577-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":121786}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 10:27:17 GMT
+recorded_with: VCR 3.0.1

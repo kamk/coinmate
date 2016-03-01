@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/transactionHistory?clientId=2629&limit=2&nonce=145673913992&signature=25FA67B57D790BD022A1E10EC30E3CDDFCCF81B107D7E89DF7508A84D09DC18B
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 09:45:40 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d08e6d59bdee228d1e33e4cdc9760fd381456739139; expires=Tue, 28-Feb-17
+        09:45:39 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c37008cec63e32-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":[{"timestamp":1456738250361,"transactionId":121675,"transactionType":"SELL","price":394.09,"priceCurrency":"EUR","amount":0.025,"amountCurrency":"BTC","fee":0.03448287,"feeCurrency":"EUR","description":null,"status":"OK","orderId":3611652},{"timestamp":1456738079303,"transactionId":121670,"transactionType":"BUY","price":394,"priceCurrency":"EUR","amount":0.01820933,"amountCurrency":"BTC","fee":0.02511066,"feeCurrency":"EUR","description":null,"status":"OK","orderId":3611628}]}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 09:45:40 GMT
+recorded_with: VCR 3.0.1

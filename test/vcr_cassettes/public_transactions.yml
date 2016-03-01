@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://coinmate.io/api/transactions?minutesIntoHistory=240
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 06:53:59 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d9e6b511419407a8d1c0828984b083f661456728839; expires=Tue, 28-Feb-17
+        06:53:59 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c2748d99f6273e-FRA
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":[{"timestamp":1456718339048,"transactionId":"121640","price":393.85,"amount":0.71841753,"currencyPair":"BTC_EUR"},{"timestamp":1456718284903,"transactionId":"121639","price":393.74,"amount":0.58687988,"currencyPair":"BTC_EUR"},{"timestamp":1456716964184,"transactionId":"121638","price":393.65,"amount":0.09845169,"currencyPair":"BTC_EUR"},{"timestamp":1456716887382,"transactionId":"121637","price":393.65,"amount":0.00771131,"currencyPair":"BTC_EUR"},{"timestamp":1456716886824,"transactionId":"121636","price":393.56,"amount":0.55458869,"currencyPair":"BTC_EUR"},{"timestamp":1456716049747,"transactionId":"121635","price":393.65,"amount":0.04072633,"currencyPair":"BTC_EUR"},{"timestamp":1456716049174,"transactionId":"121634","price":393.51,"amount":0.52127367,"currencyPair":"BTC_EUR"},{"timestamp":1456714382096,"transactionId":"121633","price":393.39,"amount":0.248883,"currencyPair":"BTC_EUR"},{"timestamp":1456714275856,"transactionId":"121632","price":393.17,"amount":0.35252329,"currencyPair":"BTC_EUR"},{"timestamp":1456713933027,"transactionId":"121631","price":393.06,"amount":0.1435398,"currencyPair":"BTC_EUR"},{"timestamp":1456713714871,"transactionId":"121630","price":393.06,"amount":0.24164916,"currencyPair":"BTC_EUR"},{"timestamp":1456713714321,"transactionId":"121629","price":393.02,"amount":0.24646084,"currencyPair":"BTC_EUR"},{"timestamp":1456713378627,"transactionId":"121628","price":393.02,"amount":0.0403,"currencyPair":"BTC_EUR"}]}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 06:54:02 GMT
+recorded_with: VCR 3.0.1

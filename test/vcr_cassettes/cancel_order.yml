@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/openOrders?clientId=2629&currencyPair=BTC_EUR&nonce=145674045437&signature=BD117DC524A034AE89E11D4627327453A07944E10FD4787E54EC1DD4B302B76B
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 10:07:35 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd8061512aa3b06a7c00c761a54a2c11a1456740455; expires=Tue, 28-Feb-17
+        10:07:35 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c3902842203e1a-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":[{"id":3612294,"timestamp":1456740240734,"type":"BUY","price":385,"amount":0.02588343},{"id":3611161,"timestamp":1456736191950,"type":"SELL","price":405,"amount":0.01},{"id":3611158,"timestamp":1456736153726,"type":"BUY","price":380,"amount":0.026224}]}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 10:07:36 GMT
+- request:
+    method: post
+    uri: https://coinmate.io/api/cancelOrder?clientId=2629&nonce=145674045626&orderId=3611161&signature=379418EEDEBA5815B7134C1329B803C16F0931C199F96DCF314D750F4C30BC80
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 29 Feb 2016 10:07:37 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dbcee769196057e56dc87b839a985d3f01456740457; expires=Tue, 28-Feb-17
+        10:07:37 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Ray:
+      - 27c39032a2b43e1a-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":true}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 10:07:38 GMT
+recorded_with: VCR 3.0.1

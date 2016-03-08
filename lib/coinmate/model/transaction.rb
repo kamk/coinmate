@@ -21,5 +21,14 @@ module Coinmate::Model
       end
     end
 
+
+    def fiat_amount
+      if price
+        (price * amount).round(2)
+      else
+        raise Coinmate::Error.new("Cannot get fiat_amount for #{transaction_type}")
+      end
+    end
+
   end
 end

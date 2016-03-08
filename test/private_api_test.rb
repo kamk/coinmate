@@ -66,6 +66,7 @@ class PrivateApiTest < Minitest::Test
       assert_nil                sell_tx.description
       assert_equal 'OK',        sell_tx.status
       assert_equal 3611652,     sell_tx.order_id
+      assert_equal -9.85,       sell_tx.fiat_amount
       buy_tx = data[1]
       assert_equal 121670,      buy_tx.transaction_id
       assert_equal 'BUY',       buy_tx.transaction_type
@@ -78,6 +79,7 @@ class PrivateApiTest < Minitest::Test
       assert_nil                buy_tx.description
       assert_equal 'OK',        buy_tx.status
       assert_equal 3611628,     buy_tx.order_id
+      assert_equal 7.17,        buy_tx.fiat_amount
     end
   end
 

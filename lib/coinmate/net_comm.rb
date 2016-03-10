@@ -42,17 +42,24 @@ module Coinmate
       uri = URI(Coinmate::SERVICE_URI + resource)
       uri.query = URI.encode_www_form(params)
 
-      Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-        response = http.request req_klass.new(uri)
-        unless response.is_a?(Net::HTTPSuccess)
-          http.finish
-          raise Coinmate::Error.new(sprintf("%d %s", response.code, response.message))
+      begin
+        Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+          response = http.request req_klass.new(uri)
+          unless response.is_a?(Net::HTTPSuccess)
+            http.finish
+            raise Coinmate::Error.new(sprintf("%d %s", response.code, response.message))
+          end
+          result = JSON.parse(response.body)
+          if result['error']
+            http.finish
+            raise Coinmate::Error.new(result['errorMessage'])
+          end
         end
-        result = JSON.parse(response.body)
-        if result['error']
-          http.finish
-          raise Coinmate::Error.new(result['errorMessage'])
+      rescue SocketError, SystemCallError => err
+        if err.is_a?(SystemCallError)
+          raise if err.class.name !~ /^Errno::/
         end
+        raise Coinmate::Error.new("Network error: #{err}")
       end
       result['data']
     end

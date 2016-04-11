@@ -66,8 +66,9 @@ module Coinmate
 
     
     def signature_params
-      nonce = (Time.now.to_f * 100).to_i
+      nonce = Time.now.to_i
       message = sprintf("%d%d%s", nonce, @client_id, @public_key)
+      sleep 1
       {
         clientId: @client_id,
         nonce: nonce,

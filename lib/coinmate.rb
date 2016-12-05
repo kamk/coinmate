@@ -3,6 +3,7 @@ require 'active_model'
 require 'bigdecimal'
 
 require "coinmate/version"
+require "coinmate/model/base"
 require "coinmate/model/offer"
 require "coinmate/model/ticker"
 require "coinmate/model/transaction"

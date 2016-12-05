@@ -1,6 +1,5 @@
 module Coinmate::Model
-  class Transaction
-    include ActiveModel::Model
+  class Transaction < Base
     
     DEBIT_TRANSACTION_TYPES = %w(SELL QUICK_SELL WITHDRAWAL CREATE_VOUCHER DEBIT)
     
@@ -12,10 +11,11 @@ module Coinmate::Model
 
 
     def initialize(attributes = {})
-      attributes.each do |a, v|
-        v = Time.at(v / 1000) if a == 'timestamp'
-        send((a.underscore + '=').to_sym, v)
-      end
+      super
+      self.timestamp = Time.at(timestamp / 1000.0)
+      self.price = BigDecimal.new(price, 8)
+      self.amount = BigDecimal.new(amount, 12)
+      self.fee = BigDecimal.new(fee, 12) if fee
       if DEBIT_TRANSACTION_TYPES.include?(transaction_type)
         self.amount *= -1
       end
@@ -28,6 +28,11 @@ module Coinmate::Model
       else
         raise Coinmate::Error.new("Cannot get fiat_amount for #{transaction_type}")
       end
+    end
+
+
+    def to_hash
+      @raw
     end
 
   end

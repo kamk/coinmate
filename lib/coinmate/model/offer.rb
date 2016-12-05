@@ -1,9 +1,6 @@
 module Coinmate::Model
-  class Offer
-    include ActiveModel::Model
-    
+  class Offer < Base
     attr_accessor :price, :amount
-    
     
     def initialize(attributes = {})
       super

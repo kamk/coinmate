@@ -40,11 +40,17 @@ module Coinmate
         params.merge!(signature_params)
       end
       uri = URI(Coinmate::SERVICE_URI + resource)
-      uri.query = URI.encode_www_form(params)
+      params = URI.encode_www_form(params)
+      uri.query = params if req_klass == Net::HTTP::Get
 
       begin
         Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-          response = http.request req_klass.new(uri)
+          req = req_klass.new(uri)
+          if req_klass == Net::HTTP::Post
+            req['Content-Type'] = 'application/x-www-form-urlencoded'
+            req.body = params
+          end
+          response = http.request(req)
           unless response.is_a?(Net::HTTPSuccess)
             http.finish
             raise Coinmate::Error.new(sprintf("%d %s", response.code, response.message))

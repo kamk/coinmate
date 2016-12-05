@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://coinmate.io/api/balances?clientId=2629&nonce=145673623941&signature=96834CC5AB4E9A6F25A59F16B5EC0B25E761063BE3A8E66D0EDCCAC4F7ED39F6
+    uri: https://coinmate.io/api/balances
     body:
-      encoding: UTF-8
-      string: ''
+      encoding: US-ASCII
+      string: clientId=2629&nonce=1480952177&signature=71A8EA17234C829D6C1C9D70A4F33C5B220A7E03CF483A367BDEE704AFFB553B
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -20,10 +20,8 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - cloudflare-nginx
       Date:
-      - Mon, 29 Feb 2016 08:57:20 GMT
+      - Mon, 05 Dec 2016 15:36:18 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -31,8 +29,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=de40e5a6e9764b49e646a54750fee68911456736239; expires=Tue, 28-Feb-17
-        08:57:19 GMT; path=/; domain=.coinmate.io; HttpOnly
+      - __cfduid=debe574a331760bcc27f12899ee519c091480952178; expires=Tue, 05-Dec-17
+        15:36:18 GMT; path=/; domain=.coinmate.io; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
@@ -41,63 +39,17 @@ http_interactions:
       - 1; mode=block
       Vary:
       - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
-      Cf-Ray:
-      - 27c3293b32dd3de4-PRG
-    body:
-      encoding: ASCII-8BIT
-      string: '{"error":false,"errorMessage":null,"data":{"EUR":{"currency":"EUR","balance":44.53277936,"reserved":9.97010256,"available":34.56267680},"BTC":{"currency":"BTC","balance":0.02533462,"reserved":0.01,"available":0.01533462}}}'
-    http_version: 
-  recorded_at: Mon, 29 Feb 2016 08:57:20 GMT
-- request:
-    method: post
-    uri: https://coinmate.io/api/balances?clientId=2629&nonce=145673625982&signature=18608F0EA334D1C37A82C2F08FE1DBF829C7090AC5905EA65884012EFA4B094E
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - coinmate.io
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
       Server:
       - cloudflare-nginx
-      Date:
-      - Mon, 29 Feb 2016 08:57:40 GMT
-      Content-Type:
-      - application/json;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d1860078628c177ffd10dd11b842905421456736259; expires=Tue, 28-Feb-17
-        08:57:39 GMT; path=/; domain=.coinmate.io; HttpOnly
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Vary:
-      - Accept-Encoding
-      Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains
       Cf-Ray:
-      - 27c329b820453e08-PRG
+      - 30c892ac1b4c2750-FRA
     body:
       encoding: ASCII-8BIT
-      string: '{"error":false,"errorMessage":null,"data":{"EUR":{"currency":"EUR","balance":44.53277936,"reserved":9.97010256,"available":34.56267680},"BTC":{"currency":"BTC","balance":0.02533462,"reserved":0.01,"available":0.01533462}}}'
+      string: '{"error":false,"errorMessage":null,"data":{"EUR":{"currency":"EUR","balance":16.64502607,"reserved":7.0035,"available":9.64152607},"CZK":{"currency":"CZK","balance":10.00000243,"reserved":0,"available":10.00000243},"BTC":{"currency":"BTC","balance":0.03647412,"reserved":0.02,"available":0.01647412}}}'
     http_version: 
-  recorded_at: Mon, 29 Feb 2016 08:57:40 GMT
+  recorded_at: Mon, 05 Dec 2016 15:36:18 GMT
 recorded_with: VCR 3.0.1

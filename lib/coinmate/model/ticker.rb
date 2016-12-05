@@ -1,15 +1,15 @@
 module Coinmate::Model  
-  class Ticker
+  class Ticker < Base
     include ActiveModel::Model
   
     attr_accessor :last, :high, :low, :amount, :bid, :ask, :timestamp
 
     def initialize(attributes = {})
-      attributes.each do |a, v|
-        p = (a == 'amount') ? 12 : 8
-        attributes[a] = BigDecimal.new(v, p)
-      end
       super
+      attributes.each do |a, v|
+        next if a == 'timestamp'
+        public_send("#{a}=".to_sym, BigDecimal.new(v, (a == 'amount') ? 12 : 8))
+      end
       self.timestamp = Time.at(attributes['timestamp'])
     end
   end

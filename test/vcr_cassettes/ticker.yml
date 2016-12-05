@@ -20,10 +20,8 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - cloudflare-nginx
       Date:
-      - Sun, 28 Feb 2016 20:48:37 GMT
+      - Mon, 05 Dec 2016 15:24:16 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -31,8 +29,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=db5dffbfa1c4a07d56218f5e5f5633ad41456692517; expires=Mon, 27-Feb-17
-        20:48:37 GMT; path=/; domain=.coinmate.io; HttpOnly
+      - __cfduid=d4dcd965f226ff761c22f9701983cf3c71480951455; expires=Tue, 05-Dec-17
+        15:24:15 GMT; path=/; domain=.coinmate.io; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
@@ -41,13 +39,17 @@ http_interactions:
       - 1; mode=block
       Vary:
       - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare-nginx
       Cf-Ray:
-      - 27befdcc93fe266c-FRA
+      - 30c88107cf602708-FRA
     body:
       encoding: ASCII-8BIT
-      string: '{"error":false,"errorMessage":null,"data":{"last":391.06,"high":394,"low":385.91,"amount":83.11065935,"bid":392.23,"ask":392.49,"timestamp":1456692517}}'
+      string: '{"error":false,"errorMessage":null,"data":{"last":711.01,"high":730.69,"low":705,"amount":139.41507092,"bid":709.88,"ask":711,"timestamp":1480951456}}'
     http_version: 
-  recorded_at: Sun, 28 Feb 2016 20:48:39 GMT
+  recorded_at: Mon, 05 Dec 2016 15:24:15 GMT
 recorded_with: VCR 3.0.1

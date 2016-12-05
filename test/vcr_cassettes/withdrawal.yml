@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://coinmate.io/api/bitcoinWithdrawal?address=1B5mzWnLh3NAZg3xfRdU5gMQxTdFYUYYqL&amount=0.13668431&clientId=2629&nonce=145674163619&signature=A76E73DDDB640033C367C9CAB816099E66104528003BB639A2AB1D43AC2C13C7
+    uri: https://coinmate.io/api/bitcoinWithdrawal
     body:
-      encoding: UTF-8
-      string: ''
+      encoding: US-ASCII
+      string: amount=0.005&address=16Z68H4HQAuz6fSLXncChpQiVRdD5gbXF6&clientId=2629&nonce=1480959514&signature=D250BD5FF8F983B27E584ED1F656682AEBC3382F6C18783C5D60849C8563C287
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -15,15 +15,15 @@ http_interactions:
       - Ruby
       Host:
       - coinmate.io
+      Content-Type:
+      - application/x-www-form-urlencoded
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - cloudflare-nginx
       Date:
-      - Mon, 29 Feb 2016 10:27:16 GMT
+      - Mon, 05 Dec 2016 17:38:35 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -31,8 +31,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dd77be9ee874736a32f3ddf475e2253821456741636; expires=Tue, 28-Feb-17
-        10:27:16 GMT; path=/; domain=.coinmate.io; HttpOnly
+      - __cfduid=dc9fe2fc02ca9c671b210f00ef9c2b3d91480959515; expires=Tue, 05-Dec-17
+        17:38:35 GMT; path=/; domain=.coinmate.io; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
@@ -41,13 +41,17 @@ http_interactions:
       - 1; mode=block
       Vary:
       - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare-nginx
       Cf-Ray:
-      - 27c3acfd30c70577-PRG
+      - 30c945cbddcd64ff-FRA
     body:
       encoding: ASCII-8BIT
-      string: '{"error":false,"errorMessage":null,"data":121786}'
+      string: '{"error":false,"errorMessage":null,"data":284444}'
     http_version: 
-  recorded_at: Mon, 29 Feb 2016 10:27:17 GMT
+  recorded_at: Mon, 05 Dec 2016 17:38:35 GMT
 recorded_with: VCR 3.0.1

@@ -39,7 +39,7 @@ module Coinmate
     end
 
     def sell_instant(amount)
-      @net.post('buyInstant', amount: amount, currencyPair: CURR_PAIR)
+      @net.post('sellInstant', amount: amount, currencyPair: CURR_PAIR)
     end
 
   end

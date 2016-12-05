@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://coinmate.io/api/bitcoinDepositAddresses?clientId=2629&nonce=145674196386&signature=F4637C88581C49F175B77BA98ED268F99926F544990C39FEBF0CE4E5CD63597A
+    uri: https://coinmate.io/api/bitcoinDepositAddresses
     body:
-      encoding: UTF-8
-      string: ''
+      encoding: US-ASCII
+      string: clientId=2629&nonce=1480959513&signature=4174D4CA2052CA5A9E0559B2060D9965E953FE8A82DF8E62F9CC5E10A445624D
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -15,15 +15,15 @@ http_interactions:
       - Ruby
       Host:
       - coinmate.io
+      Content-Type:
+      - application/x-www-form-urlencoded
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - cloudflare-nginx
       Date:
-      - Mon, 29 Feb 2016 10:32:44 GMT
+      - Mon, 05 Dec 2016 17:38:34 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -31,8 +31,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=de90d2de0feaf8e9cd39268bb370ae8311456741963; expires=Tue, 28-Feb-17
-        10:32:43 GMT; path=/; domain=.coinmate.io; HttpOnly
+      - __cfduid=d5b3d604c0c41e934dceefe3d3351bde21480959514; expires=Tue, 05-Dec-17
+        17:38:34 GMT; path=/; domain=.coinmate.io; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
@@ -41,13 +41,17 @@ http_interactions:
       - 1; mode=block
       Vary:
       - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare-nginx
       Cf-Ray:
-      - 27c3b4fa65150577-PRG
+      - 30c945c3de8263eb-FRA
     body:
       encoding: ASCII-8BIT
-      string: '{"error":false,"errorMessage":null,"data":["1HdTtLCFyCGaUbYLAiuPwU3kMYLdvX6tYH","15v16WuR5QgM6wTX5oMBmy78LgNPLoGXm6"]}'
+      string: '{"error":false,"errorMessage":null,"data":["12vb5vhzjqrgWKRzmcCpCfpBKXUwzcPBAB","1HdTtLCFyCGaUbYLAiuPwU3kMYLdvX6tYH","15v16WuR5QgM6wTX5oMBmy78LgNPLoGXm6"]}'
     http_version: 
-  recorded_at: Mon, 29 Feb 2016 10:32:44 GMT
+  recorded_at: Mon, 05 Dec 2016 17:38:34 GMT
 recorded_with: VCR 3.0.1

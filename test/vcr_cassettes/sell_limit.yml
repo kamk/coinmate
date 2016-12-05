@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://coinmate.io/api/sellLimit?amount=0.025&clientId=2629&currencyPair=BTC_EUR&nonce=145673824951&price=394&signature=2FFAFD39E707D7FC1CA249E8D5892D65E080583BD7EFA3F2B2065948A62D37A3
+    uri: https://coinmate.io/api/sellLimit
     body:
-      encoding: UTF-8
-      string: ''
+      encoding: US-ASCII
+      string: amount=0.02&price=725&currencyPair=BTC_EUR&clientId=2629&nonce=1480951950&signature=53942D9DA1546AEFF2B0677D4CC2BBD559D8CB6F0B88B255EE5D004DEE0775F5
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -20,10 +20,8 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - cloudflare-nginx
       Date:
-      - Mon, 29 Feb 2016 09:30:51 GMT
+      - Mon, 05 Dec 2016 15:32:33 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -31,8 +29,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d2442e6d88238df1da51c1244ba14e7291456738250; expires=Tue, 28-Feb-17
-        09:30:50 GMT; path=/; domain=.coinmate.io; HttpOnly
+      - __cfduid=d87b0a2f4d99977d8880ea57b6989719a1480951952; expires=Tue, 05-Dec-17
+        15:32:32 GMT; path=/; domain=.coinmate.io; HttpOnly
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
@@ -41,13 +39,17 @@ http_interactions:
       - 1; mode=block
       Vary:
       - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare-nginx
       Cf-Ray:
-      - 27c35a4e96bb057d-PRG
+      - 30c88d24c8f064bd-FRA
     body:
       encoding: ASCII-8BIT
-      string: '{"error":false,"errorMessage":null,"data":3611652}'
+      string: '{"error":false,"errorMessage":null,"data":9737946}'
     http_version: 
-  recorded_at: Mon, 29 Feb 2016 09:30:51 GMT
+  recorded_at: Mon, 05 Dec 2016 15:32:33 GMT
 recorded_with: VCR 3.0.1

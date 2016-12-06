@@ -13,8 +13,8 @@ module Coinmate::Model
     def initialize(attributes = {})
       super
       self.timestamp = Time.at(timestamp / 1000.0)
-      self.price = BigDecimal.new(price, 8)
-      self.amount = BigDecimal.new(amount, 12)
+      self.price = BigDecimal.new(price, 8) if price
+      self.amount = BigDecimal.new(amount, 12) if amount
       self.fee = BigDecimal.new(fee, 12) if fee
       if DEBIT_TRANSACTION_TYPES.include?(transaction_type)
         self.amount *= -1

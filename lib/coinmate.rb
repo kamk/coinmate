@@ -20,6 +20,8 @@ module Coinmate
   SERVICE_URI = "https://coinmate.io/api/"
   CURR_PAIR = 'BTC_EUR'
 
+  NET_TIMEOUT = 10     # secs
+
   private
   def self.to_api_params(opts)
     r = {}

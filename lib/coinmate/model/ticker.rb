@@ -2,7 +2,7 @@ module Coinmate::Model
   class Ticker < Base
     include ActiveModel::Model
   
-    attr_accessor :last, :high, :low, :amount, :bid, :ask, :timestamp
+    attr_accessor :last, :high, :low, :amount, :bid, :ask, :change, :open, :timestamp
 
     def initialize(attributes = {})
       super

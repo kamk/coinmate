@@ -61,7 +61,7 @@ module Coinmate
             raise Coinmate::Error.new(result['errorMessage'])
           end
         end
-      rescue Net::ProtocolError, Resolv::ResolvError, Timeout::Error, SocketError, SystemCallError => err
+      rescue OpenSSL::OpenSSLError, Net::ProtocolError, Resolv::ResolvError, Timeout::Error, SocketError, SystemCallError => err
         raise Coinmate::Error.new("Network error: #{err}")
       end
       result['data']

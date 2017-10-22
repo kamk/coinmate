@@ -20,8 +20,8 @@ end
 
 # API keys
 CLIENT_ID = 2629
-PUBKEY = "k44fJw6plTKGLxHy-N1iYOmHJvWjFymR6DJuuN-NBJM"
-PRIVKEY = "i6hRWMytiycrmfcjY1u6rJt9NtmWaF9Glww0bsanw4s"
+PUBKEY = "LX4z8o5p00_0aZtbU-3TydoBY8VTawhkIDzj7t2vUio"
+PRIVKEY = "oiBpIeM7UIRBK_GmdDgWZvI2R-oVu45p4YG4GqCW7Xk"
 
 
 # BigDecimal numbers

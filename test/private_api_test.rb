@@ -28,17 +28,17 @@ class PrivateApiTest < Minitest::Test
     VCR.use_cassette('orders') do
       data = @cm.orders.all
       sell_order = data[0]
-      assert_equal 9737946, sell_order.id
-      assert_equal Time.at(1480951952327 / 1000.0), sell_order.timestamp
+      assert_equal 30974298, sell_order.id
+      assert_equal Time.at(1508697854886 / 1000.0), sell_order.timestamp
       assert_equal 'SELL', sell_order.type
-      assert_equal to_bigd(725), sell_order.price
-      assert_equal to_bigd(0.02), sell_order.amount
+      assert_equal to_bigd(6000), sell_order.price
+      assert_equal to_bigd(0.00078526), sell_order.amount
       buy_order = data[1]
-      assert_equal 9737945, buy_order.id
-      assert_equal Time.at(1480951950543 / 1000.0), buy_order.timestamp
+      assert_equal 30971010, buy_order.id
+      assert_equal Time.at(1508696314821 / 1000.0), buy_order.timestamp
       assert_equal 'BUY', buy_order.type
-      assert_equal to_bigd(350), buy_order.price
-      assert_equal to_bigd(0.02), buy_order.amount
+      assert_equal to_bigd(4000), buy_order.price
+      assert_equal to_bigd(0.00378365), buy_order.amount
     end
   end
 

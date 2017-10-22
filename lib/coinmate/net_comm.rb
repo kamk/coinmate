@@ -61,7 +61,7 @@ module Coinmate
             raise Coinmate::Error.new(result['errorMessage'])
           end
         end
-      rescue OpenSSL::OpenSSLError, Net::ProtocolError, Resolv::ResolvError, Timeout::Error, SocketError, SystemCallError => err
+      rescue OpenSSL::OpenSSLError, Net::ProtocolError, Timeout::Error, SocketError, SystemCallError => err
         raise Coinmate::Error.new("Network error: #{err}")
       end
       result['data']
@@ -74,6 +74,7 @@ module Coinmate
       sleep 1
       {
         clientId: @client_id,
+        publicKey: @public_key,
         nonce: nonce,
         signature: OpenSSL::HMAC.hexdigest(SHA256_DIGEST, @private_key, message) \
                                 .upcase

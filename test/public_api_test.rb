@@ -6,7 +6,7 @@ class PublicApiTest < Minitest::Test
     @cm = Coinmate::Client.new
   end
 
-  
+
   def test_order_book
     VCR.use_cassette('order_book') do
       data = @cm.order_book
@@ -32,7 +32,28 @@ class PublicApiTest < Minitest::Test
       end
     end
   end
-  
+
+  def test_order_book_czk
+    VCR.use_cassette('order_book_czk') do
+      data = Coinmate::Client.new(nil, nil, nil, 'BTC_CZK').order_book
+      # ASKS side
+      assert_includes data, 'asks'
+      [ { price: 180100,  amount: 0.00126278 },
+        { price: 180377.6, amount: 1.67066532 },
+        { price: 180479.94, amount: 0.12162191 }
+      ].each_with_index do |offer, i|
+        check_order_book(offer, data['asks'][i])
+      end
+      # BIDS side
+      assert_includes data, 'bids'
+      [ { price: 180095.75, amount: 0.05453235 },
+        { price: 179589.04, amount: 0.0112 },
+        { price: 179589.03,  amount: 0.038438 }
+      ].each_with_index do |offer, i|
+        check_order_book(offer, data['bids'][i])
+      end
+    end
+  end
 
   def test_ticker
     VCR.use_cassette('ticker') do
@@ -48,6 +69,21 @@ class PublicApiTest < Minitest::Test
     end
   end
 
+  def test_ticker_czk
+    VCR.use_cassette('ticker_czk') do
+      data = @cm.ticker(currencyPair: 'BTC_CZK')
+      assert_instance_of Coinmate::Model::Ticker, data
+      assert_equal to_bigd(179313.35), data.last
+      assert_equal to_bigd(180000), data.high
+      assert_equal to_bigd(172000), data.low
+      assert_equal to_bigd(98.17279234), data.amount
+      assert_equal to_bigd(179300), data.bid
+      assert_equal to_bigd(179900), data.ask
+      assert_equal to_bigd(1.91), data.change
+      assert_equal to_bigd(175950.81), data.open
+      assert_equal Time.at(1511271993), data.timestamp
+    end
+  end
 
   def test_transactions
     VCR.use_cassette('public_transactions') do

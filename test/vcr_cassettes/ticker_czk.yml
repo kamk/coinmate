@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://coinmate.io/api/ticker?currencyPair=BTC_CZK
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Nov 2017 13:46:33 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dcc41346fe76a9e915fbb52e1ec724b5f1511271993; expires=Wed, 21-Nov-18
+        13:46:33 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 3c1418867f787b90-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":{"last":179313.35,"high":180000,"low":172000,"amount":98.17279234,"bid":179300,"ask":179900,"change":1.91,"open":175950.81,"timestamp":1511271993}}'
+    http_version: 
+  recorded_at: Tue, 21 Nov 2017 13:46:33 GMT
+recorded_with: VCR 3.0.3

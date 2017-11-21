@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class PrivateApiTest < Minitest::Test
-    
+
   def setup
     @cm = Coinmate::Client.new(CLIENT_ID, PUBKEY, PRIVKEY)
   end
-  
+
 
   def test_balances
     VCR.use_cassette('balances') do
@@ -42,6 +42,26 @@ class PrivateApiTest < Minitest::Test
     end
   end
 
+  def test_orders_all_currencies
+    VCR.use_cassette('orders_all_currencies') do
+      data = @cm.orders(currPair: nil).all
+      sell_order = data[0]
+      assert_equal 32780, sell_order.id
+      assert_equal Time.at(1404383652640 / 1000.0), sell_order.timestamp
+      assert_equal 'SELL', sell_order.type
+      assert_equal to_bigd(1000000000), sell_order.price
+      assert_equal to_bigd(1), sell_order.amount
+      assert_equal 'BTC_EUR', sell_order.currency_pair
+
+      buy_order = data[1]
+      assert_equal 32784, buy_order.id
+      assert_equal Time.at(1404383662360 / 1000.0), buy_order.timestamp
+      assert_equal 'BUY', buy_order.type
+      assert_equal to_bigd(1000000), buy_order.price
+      assert_equal to_bigd(1), buy_order.amount
+      assert_equal 'BTC_CZK', buy_order.currency_pair
+    end
+  end
 
   def test_cancel_order
     VCR.use_cassette('cancel_order') do

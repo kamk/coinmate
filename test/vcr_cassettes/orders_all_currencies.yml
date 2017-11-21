@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coinmate.io/api/openOrders
+    body:
+      encoding: US-ASCII
+      string: currencyPair=BTC_EUR&clientId=2629&publicKey=LX4z8o5p00_0aZtbU-3TydoBY8VTawhkIDzj7t2vUio&nonce=1511273326&signature=92AA95CB89D45450023F5705BE368FB08EEA6B76397CEE225F797E14F292F643
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - coinmate.io
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Nov 2017 14:08:47 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de0c6ac1a004bdecb7e7fae32df71c4681511273327; expires=Wed, 21-Nov-18
+        14:08:47 GMT; path=/; domain=.coinmate.io; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 3c143916e9937b90-PRG
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":false,"errorMessage":null,"data":[{"id":32780,"timestamp":1404383652640,"type":"SELL","currencyPair":"BTC_EUR","price":1000000000,"amount":1},{"id":32784,"timestamp":1404383662360,"type":"BUY","currencyPair":"BTC_CZK","price":1000000,"amount":1},{"id":32807,"timestamp":1404389352547,"type":"BUY","currencyPair":"BTC_EUR","price":1,"amount":1},{"id":32810,"timestamp":1404389358072,"type":"SELL","currencyPair":"LTC_BTC","price":1000000,"amount":1},{"id":32705,"timestamp":1404315812833,"type":"SELL","currencyPair":"BTC_EUR","price":1000,"amount":0.975},{"id":32423,"timestamp":1404306314334,"type":"SELL","currencyPair":"BTC_EUR","price":1000,"amount":1.22155851}]}'
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 14:08:47 GMT
+recorded_with: VCR 3.0.3

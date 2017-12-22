@@ -1,12 +1,13 @@
 module Coinmate
   class Client
-  
-    def initialize(client_id = nil, pubkey = nil, privkey = nil)
+
+    def initialize(client_id = nil, pubkey = nil, privkey = nil, currency_pair = nil)
       @net = Coinmate::NetComm.new(client_id, pubkey, privkey)
+      @currency_pair = currency_pair
     end
 
-    def order_book
-      data = @net.get('orderBook', currencyPair: CURR_PAIR, groupByPriceLimit: 'True')
+    def order_book(params = {})
+      data = @net.get('orderBook', currencyPair: currency_pair(params), groupByPriceLimit: 'True')
       %w(asks bids).each do |dir|
         data[dir].map!{ |e| Coinmate::Model::Offer.new(e) }
       end
@@ -15,8 +16,8 @@ module Coinmate
 
 
     # Get ticker data
-    def ticker
-      data = @net.get('ticker', currencyPair: CURR_PAIR)
+    def ticker(params = {})
+      data = @net.get('ticker', currencyPair: currency_pair(params))
       Coinmate::Model::Ticker.new(data)
     end
 
@@ -35,11 +36,11 @@ module Coinmate
       end
       data
     end
-    
+
 
     # Access to orders
-    def orders
-      @orders ||= Coinmate::Orders.new(@net)
+    def orders(params = {})
+      @orders ||= Coinmate::Orders.new(@net, currency_pair(params))
     end
 
 
@@ -57,5 +58,10 @@ module Coinmate
       @net.post('unconfirmedBitcoinDeposits')
     end
 
+    private
+
+    def currency_pair(params = {})
+      params[:currencyPair] || @currency_pair || DEFAULT_CURR_PAIR
+    end
   end
 end

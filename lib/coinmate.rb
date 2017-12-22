@@ -18,7 +18,7 @@ require "coinmate/client"
 
 module Coinmate
   SERVICE_URI = "https://coinmate.io/api/"
-  CURR_PAIR = 'BTC_EUR'
+  DEFAULT_CURR_PAIR = 'BTC_EUR'
 
   NET_TIMEOUT = 10     # secs
 
@@ -32,5 +32,5 @@ module Coinmate
     end
     r
   end
-  
+
 end

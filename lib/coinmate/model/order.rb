@@ -1,7 +1,7 @@
 module Coinmate::Model
   class Order < Base
     attr_writer :net
-    attr_accessor :id, :timestamp, :type, :currency_pair, :price, :amount
+    attr_accessor :id, :timestamp, :type, :currency_pair, :price, :amount, :order_trade_type, :stop_price, :hidden
   
     def initialize(attributes = {})
       super

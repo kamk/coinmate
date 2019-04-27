@@ -28,26 +28,26 @@ class PrivateApiTest < Minitest::Test
     VCR.use_cassette('orders') do
       data = @cm.orders.all
       sell_order = data[0]
-      assert_equal 30974298, sell_order.id
-      assert_equal Time.at(1508697854886 / 1000.0), sell_order.timestamp
+      assert_equal 292596028, sell_order.id
+      assert_equal Time.at(1556378795768 / 1000.0), sell_order.timestamp
       assert_equal 'SELL', sell_order.type
-      assert_equal to_bigd(6000), sell_order.price
-      assert_equal to_bigd(0.00078526), sell_order.amount
+      assert_equal to_bigd(5000), sell_order.price
+      assert_equal to_bigd(0.004), sell_order.amount
       buy_order = data[1]
-      assert_equal 30971010, buy_order.id
-      assert_equal Time.at(1508696314821 / 1000.0), buy_order.timestamp
+      assert_equal 292595840, buy_order.id
+      assert_equal Time.at(1556378774657 / 1000.0), buy_order.timestamp
       assert_equal 'BUY', buy_order.type
       assert_equal to_bigd(4000), buy_order.price
-      assert_equal to_bigd(0.00378365), buy_order.amount
+      assert_equal to_bigd(0.00498753), buy_order.amount
     end
   end
 
 
   def test_cancel_order
     VCR.use_cassette('cancel_order') do
-      order = @cm.orders.find(9737945)
+      order = @cm.orders.find(292596028)
       assert order.cancel!
-      order = @cm.orders.find(9737946)
+      order = @cm.orders.find(292595840)
       assert order.cancel!
     end
   end

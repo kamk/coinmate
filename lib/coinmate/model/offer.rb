@@ -4,8 +4,8 @@ module Coinmate::Model
     
     def initialize(attributes = {})
       super
-      self.price = BigDecimal.new(price, 8)
-      self.amount = BigDecimal.new(amount, 12)
+      self.price = BigDecimal(price, 8)
+      self.amount = BigDecimal(amount, 12)
     end
 
     

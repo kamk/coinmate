@@ -8,7 +8,7 @@ module Coinmate::Model
       super
       attributes.each do |a, v|
         next if a == 'timestamp'
-        public_send("#{a}=".to_sym, BigDecimal.new(v, (a == 'amount') ? 12 : 8))
+        public_send("#{a}=".to_sym, BigDecimal(v, (a == 'amount') ? 12 : 8))
       end
       self.timestamp = Time.at(attributes['timestamp'])
     end

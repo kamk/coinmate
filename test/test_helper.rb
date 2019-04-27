@@ -26,5 +26,5 @@ PRIVKEY = "oiBpIeM7UIRBK_GmdDgWZvI2R-oVu45p4YG4GqCW7Xk"
 
 # BigDecimal numbers
 def to_bigd(num)
-  BigDecimal.new(num, 12)
+  BigDecimal(num, 12)
 end

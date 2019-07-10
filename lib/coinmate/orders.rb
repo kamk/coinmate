@@ -27,11 +27,11 @@ module Coinmate
 
 
     def buy_limit(amount, price)
-      @net.post('buyLimit', amount: amount, price: price, currencyPair: CURR_PAIR)
+      @net.post('buyLimit', amount: amount, price: price.ceil(1), currencyPair: CURR_PAIR)
     end
 
     def sell_limit(amount, price)
-      @net.post('sellLimit', amount: amount, price: price, currencyPair: CURR_PAIR)
+      @net.post('sellLimit', amount: amount, price: price.ceil(1), currencyPair: CURR_PAIR)
     end
 
     def buy_instant(total)
